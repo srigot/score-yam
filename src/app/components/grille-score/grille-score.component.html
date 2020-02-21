@@ -2,35 +2,47 @@
     <mat-grid-tile>Joueurs</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.nom }}</mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile (click)="scoreService.selectScore('scoreUn')">
         <mat-icon aria-hidden="false" aria-label="Un">looks_one</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreUn }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreUn"></app-score>
+    </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile (click)="scoreService.selectScore('scoreDeux')">
         <mat-icon aria-hidden="false" aria-label="Deux">looks_two</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreDeux }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreDeux"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-icon aria-hidden="false" aria-label="Trois">looks_3</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreTrois }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreTrois"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-icon aria-hidden="false" aria-label="Quatre">looks_4</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreQuatre }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreQuatre"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-icon aria-hidden="false" aria-label="Cinq">looks_5</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreCinq }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreCinq"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-icon aria-hidden="false" aria-label="Six">looks_6</mat-icon>
     </mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreSix }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreSix"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>Total</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{totalHaut(joueur)}}</mat-grid-tile>
@@ -40,17 +52,29 @@
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{totalAvecPrime(joueur)}}</mat-grid-tile>
 
     <mat-grid-tile>Brelan</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreBrelan }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreBrelan"></app-score>
+    </mat-grid-tile>
     <mat-grid-tile>Petite suite</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scorePSuite }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scorePSuite"></app-score>
+    </mat-grid-tile>
     <mat-grid-tile>Grande suite</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreGSuite }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreGSuite"></app-score>
+    </mat-grid-tile>
     <mat-grid-tile>Full</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreFull }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreFull"></app-score>
+    </mat-grid-tile>
     <mat-grid-tile>Carré</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreCarre }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreCarre"></app-score>
+    </mat-grid-tile>
     <mat-grid-tile>Yam's</mat-grid-tile>
-    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.scoreYam }}</mat-grid-tile>
+    <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
+        <app-score [score]="joueur.scoreYam"></app-score>
+    </mat-grid-tile>
 
     <mat-grid-tile>Total Bas</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{totalBas(joueur)}}</mat-grid-tile>

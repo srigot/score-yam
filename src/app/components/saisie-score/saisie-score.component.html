@@ -1,1 +1,11 @@
-<p>saisie-score works!</p>
+<div *ngIf="scoreService.currentValue === null">{{ scoreService.currentName }}</div>
+<mat-form-field *ngIf="scoreService.currentValue">
+    <mat-label>{{ scoreService.currentName }}</mat-label>
+    <input number matInput>
+</mat-form-field>
+<button *ngIf="scoreService.currentValue" mat-icon-button aria-label="Valider" (click)="scoreService.saveScore()">
+    <mat-icon>done</mat-icon>
+</button>
+<button *ngIf="scoreService.currentValue" mat-icon-button aria-label="Barrer" (click)="scoreService.barrerScore()">
+    <mat-icon>block</mat-icon>
+</button>
