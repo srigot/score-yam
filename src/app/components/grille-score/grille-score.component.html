@@ -2,42 +2,42 @@
     <mat-grid-tile>Joueurs</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{ joueur.nom }}</mat-grid-tile>
 
-    <mat-grid-tile (click)="scoreService.selectScore('scoreUn')">
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreUn')">
         <mat-icon aria-hidden="false" aria-label="Un">looks_one</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreUn"></app-score>
     </mat-grid-tile>
 
-    <mat-grid-tile (click)="scoreService.selectScore('scoreDeux')">
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreDeux')">
         <mat-icon aria-hidden="false" aria-label="Deux">looks_two</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreDeux"></app-score>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreTrois')">
         <mat-icon aria-hidden="false" aria-label="Trois">looks_3</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreTrois"></app-score>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreQuatre')">
         <mat-icon aria-hidden="false" aria-label="Quatre">looks_4</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreQuatre"></app-score>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreCinq')">
         <mat-icon aria-hidden="false" aria-label="Cinq">looks_5</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreCinq"></app-score>
     </mat-grid-tile>
 
-    <mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreSix')">
         <mat-icon aria-hidden="false" aria-label="Six">looks_6</mat-icon>
     </mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
@@ -50,28 +50,28 @@
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{prime(joueur)}}</mat-grid-tile>
     <mat-grid-tile>Total Haut</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">{{totalAvecPrime(joueur)}}</mat-grid-tile>
-
-    <mat-grid-tile>Brelan</mat-grid-tile>
+    <mat-divider></mat-divider>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreBrelan')">Brelan</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreBrelan"></app-score>
     </mat-grid-tile>
-    <mat-grid-tile>Petite suite</mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scorePSuite')">Petite suite</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scorePSuite"></app-score>
     </mat-grid-tile>
-    <mat-grid-tile>Grande suite</mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreGSuite')">Grande suite</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreGSuite"></app-score>
     </mat-grid-tile>
-    <mat-grid-tile>Full</mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreFull')">Full</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreFull"></app-score>
     </mat-grid-tile>
-    <mat-grid-tile>Carré</mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreCarre')">Carré</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreCarre"></app-score>
     </mat-grid-tile>
-    <mat-grid-tile>Yam's</mat-grid-tile>
+    <mat-grid-tile class="clickable" (click)="scoreService.selectScore('scoreYam')">Yam's</mat-grid-tile>
     <mat-grid-tile *ngFor="let joueur of scoreService.joueurs">
         <app-score [score]="joueur.scoreYam"></app-score>
     </mat-grid-tile>

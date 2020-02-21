@@ -12,10 +12,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SaisieScoreComponent } from './components/saisie-score/saisie-score.component';
 import { GrilleScoreComponent } from './components/grille-score/grille-score.component';
 import { ScoreComponent } from './components/score/score.component';
+import { FormsModule } from '@angular/forms';
+import { UndoButtonComponent } from './components/undo-button/undo-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { ScoreComponent } from './components/score/score.component';
     ToolbarComponent,
     SaisieScoreComponent,
     GrilleScoreComponent,
-    ScoreComponent
+    ScoreComponent,
+    UndoButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import { ScoreComponent } from './components/score/score.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    MatDividerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule
   ],

@@ -7,12 +7,13 @@ import { User } from '../models/user';
 export class ScoreService {
   private currentIndex = 0;
   currentValue = null;
+  private history = [];
   private listeJoueurs: User[] = [
     {
       nom: 'Joueur un',
       scoreUn: 2,
       scoreDeux: null,
-      scoreTrois: -1,
+      scoreTrois: 0,
       scoreQuatre: null,
       scoreCinq: null,
       scoreSix: null,
@@ -46,13 +47,24 @@ export class ScoreService {
     return this.listeJoueurs;
   }
 
-  saveScore() {
+  saveScore(score: number) {
+    this.listeJoueurs[this.currentIndex][this.currentValue] = score;
+    this.history.push({ index: this.currentIndex, value: this.currentValue, score });
     this.joueurSuivant();
   }
 
   barrerScore() {
-    this.listeJoueurs[this.currentIndex][this.currentValue] = -1;
+    this.listeJoueurs[this.currentIndex][this.currentValue] = 0;
+    this.history.push({ index: this.currentIndex, value: this.currentValue, score: 0 });
     this.joueurSuivant();
+  }
+
+  undo() {
+    if (this.history.length > 0) {
+      const last = this.history.pop();
+      this.listeJoueurs[last.index][last.value] = null;
+      this.joueurPrecedent();
+    }
   }
 
   private joueurSuivant() {
@@ -60,8 +72,11 @@ export class ScoreService {
     if (this.currentIndex >= this.listeJoueurs.length - 1) {
       this.currentIndex = 0;
     } else {
-      this.currentIndex = 0;
+      this.currentIndex++;
     }
+  }
+  private joueurPrecedent() {
+
   }
 
   get currentName() {
@@ -81,5 +96,9 @@ export class ScoreService {
         this.currentValue = null;
       }
     }
+  }
+
+  isHistory() {
+    return this.history.length > 0;
   }
 }
